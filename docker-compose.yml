@@ -1,0 +1,18 @@
+version: '3'
+services:
+  frontend:
+    build: .
+    volumes:
+      - ./frontend:/app
+    command: sh -c "npm i && npm run dev"
+    tty: true
+    ports:
+      - 5173:5173
+  backend:
+    build: .
+    volumes: 
+      - ./backend:/app
+    command: sh -c "npm i && npm run dev"
+    tty: true
+    ports:
+      - "3001:3001"
