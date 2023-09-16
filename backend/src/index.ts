@@ -5,6 +5,8 @@ import { Server } from "socket.io";
 // import { ClientToServerEvents, ServerToClientEvents } from "./models";
 
 const app = express();
+// publicディレクトリを公開
+app.use(express.static(__dirname + '/public'))
 const httpServer = createServer(app);
 // const io = new Server<ClientToServerEvents, ServerToClientEvents>(
 const io = new Server(
